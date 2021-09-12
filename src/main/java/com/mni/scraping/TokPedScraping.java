@@ -11,7 +11,8 @@ public class TokPedScraping extends Scraping {
     @Override
     void doScraping() {
         try {
-            Document doc = Jsoup.connect("https://www.tokopedia.com/p/handphone-tablet/handphone/android-os").get();
+            Document doc = Jsoup.connect("https://www.tokopedia.com/p/handphone-tablet/handphone/android-os").timeout(7000).get();
+            //Document doc = Jsoup.parse("https://www.tokopedia.com/p/handphone-tablet/handphone/android-os");
             Elements elementsByClass = doc.getElementsByClass("css-bk6tzz e1nlzfl3");
             int page = 2;
 
@@ -26,7 +27,7 @@ public class TokPedScraping extends Scraping {
                     assert div1c0vu8l != null;
                     Element div1d28ct9 = div1c0vu8l.getElementsByClass("css-1d28ct9").first();
                     assert div1d28ct9 != null;
-                    Element img = div1d28ct9.getElementsByTag("img").get(0);
+                    Element img = div1d28ct9.getElementsByTag("img").first();
                     String imageSource = img.attr("src");
 
 

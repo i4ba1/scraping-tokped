@@ -8,8 +8,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        Scraping tokpedScrapped = new TokPedScraping();
-        tokpedScrapped.doScraping();
+        Scraping scraping = new ScrapingWithSelenium();
+        scraping.doScraping();
         System.out.println( "Hello World!" );
     }
 }
